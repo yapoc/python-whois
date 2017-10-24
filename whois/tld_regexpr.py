@@ -1,9 +1,10 @@
+# vi: set foldmethod=indent: set tabstop=2: set shiftwidth=2:
 com = {
 'extend': None,
 
 'domain_name':				r'Domain Name:\s?(.+)',
 'registrar':				r'Registrar:\s?(.+)',
-'registrant':				None,
+'registrant':				r'Registrant Name:\s*(.+)',
 
 'creation_date':			r'Creation Date:\s?(.+)',
 'expiration_date':			r'Expiration Date:\s?(.+)',
@@ -23,6 +24,7 @@ org = {
 
 'creation_date':			r'\nCreated On:\s?(.+)',
 'updated_date':				r'\nLast Updated On:\s?(.+)',
+'expiration_date':                      r'Registry Expiry Date:\s*(.+)',
 
 'name_servers':				r'Name Server:\s?(.+)\s*',
 }
@@ -33,7 +35,7 @@ uk = {
 'registrant':				r'Registrant:\n\s*(.+)',
 
 'creation_date':			r'Registered on:\s*(.+)',
-'expiration_date':			r'Renewal date:\s*(.+)',
+'expiration_date':			r'Expiry Date:\s*(.+)',
 'updated_date':				r'Last updated:\s*(.+)',
 
 'name_servers':				r'Name Servers:\s*(.+)\s*',
@@ -98,6 +100,7 @@ de = {
 'domain_name':				r'\ndomain:\s*(.+)',
 'updated_date':				r'\nChanged:\s?(.+)',
 'name_servers':				r'Nserver:\s*(.+)',
+'registrar':                            r'Name:\s*(.+)',
 }
 
 at = {
@@ -117,7 +120,7 @@ eu = {
 biz = {
 'extend': 'com',
 
-'registrar':				r'Sponsoring Registrar:\s?(.+)',
+'registrar':				r'Registrar:\s?(.+)',
 'registrant':				r'Registrant Organization:\s?(.+)',
 
 'creation_date':			r'Domain Registration Date:\s?(.+)',
@@ -130,10 +133,10 @@ biz = {
 info = {
 'extend': 'biz',
 
+'expiration_date':                      r'Registry Expiry Date:\s*(.+)',
 'creation_date':			r'Created On:\s?(.+)',
-'expiration_date':			r'Expiration Date:\s?(.+)',
 'updated_date':				r'Last Updated On:\s?(.+)',
-
+'registrar':				r'Registrar:\s?(.+)',
 'status':					r'Status:\s?(.+)',
 }
 
@@ -145,6 +148,7 @@ name = {
 
 us = {
 'extend': 'name',
+'expiration_date':                      r'Registry Expiry Date:\s*(.+)',
 }
 
 co = {
@@ -168,9 +172,11 @@ be = {
 'extend': 'pl',
 
 'domain_name':				r'\nDomain:\s*(.+)',
-'registrar':				r'Company Name:\n?(.+)',
+
+'registrar':				r'Registrar Technical Contacts:\s*\n\s*Name.*\n\sOrganisation:\s*(.+)',
 
 'creation_date':			r'Registered:\s*(.+)\n',
+'registrant':                           r'Registrant:\s*\n\s*(.+)',
 
 'status':					r'Status:\s?(.+)',
 }
@@ -225,12 +231,21 @@ fr = {
 
 'domain_name':				r'domain:\s?(.+)',
 'registrar':				r'registrar:\s*(.+)',
-'registrant':				r'contact:\s?(.+)',
+'registrant':				r'contact:\s*(.+)',
 
 'creation_date':			r'created:\s?(.+)',
-'expiration_date':			None,
+'expiration_date':			r'Expiry Date:\s*(.+)',
 'updated_date':				r'last-update:\s?(.+)',
 
 'name_servers':				r'nserver:\s*(.+)',
 'status':					r'status:\s?(.+)',
+}
+
+re = {
+'extend': 'fr',
+'expiration_date':                      r'Expiry Date:\s?(.+)',
+}
+
+yt = {
+'extend': 're'
 }
