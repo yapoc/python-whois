@@ -1,13 +1,9 @@
-WHOIS
-=============
+# WHOIS
 
 Python module/library for retrieving WHOIS information of domains.
-
 By DDarko  http://ddarko.org/
 
-
-Features
-=============
+# Features
 
  * Python wrapper for Linux "whois" command
  * simple interface to access parsed WHOIS data for a given domain
@@ -18,9 +14,9 @@ Features
  * possibility to cache results
 
 
-Usage example
-=============
+# Usage example
 
+```
 >>> import whois
 >>> domain = whois.query('google.com')
 
@@ -38,3 +34,8 @@ google.com
 
 >>> print(domain.expiration_date)
 2020-09-14 00:00:00
+```
+
+# ChangeLog
+
+  * 2017-10-24 : Première récupération du code & adaptation à mes besoins personnels pour alimenter les champs dont j'ai besoin.
