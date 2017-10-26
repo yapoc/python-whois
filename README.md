@@ -1,20 +1,41 @@
 # WHOIS
 
-Python module/library for retrieving WHOIS information of domains.
-By DDarko  http://ddarko.org/
+Module `python` permettant de récupérer & parser les informations WHOIS des domaines. Basé sur le travail de [DDarko](http://ddarko.org)
 
-# Features
+# Fonctionnalités
 
- * Python wrapper for Linux "whois" command
- * simple interface to access parsed WHOIS data for a given domain
- * able to extract data for all the popular TLDs (com, org, net, biz, info, pl, jp, uk, nz,  ...)
- * query a WHOIS server directly instead of going through an intermediate web service like many others do
- * works with Python 2.4+ and Python 3.x
- * all dates as datetime objects
- * possibility to cache results
+  * Module `python` simulant la commande `whois`.
+  * Interface d'accès simple et homogène des informations de WHOIS pour un domaine donné.
+  * Récupère les informations pour un grand nombre de TLDs : 
+    * `.com`
+    * `.net`
+    * `.org`
+    * `.uk`
+    * `.pl`
+    * `.ru`
+    * `.lv`
+    * `.jp`
+    * `.de`
+    * `.at`
+    * `.eu`
+    * `.biz`
+    * `.info`
+    * `.name`
+    * `.us`
+    * `.co`
+    * `.me`
+    * `.be`
+    * `.nz`
+    * `.cz`
+    * `.it`
+    * `.fr`
+    * `.re`
+    * `.yt`
+ * Fait une vraie requête WHOIS plutôt que de scrapper une interface web.
+ * Conversion des dates dans des objets de type `datetime`.
+ * Possibilité théorique de cacher les informations; voir si nécessaire à notre besoin.
 
-
-# Usage example
+# Exemples d'utilisation
 
 ```
 >>> import whois
@@ -40,3 +61,4 @@ google.com
 # ChangeLog
 
   * 2017-10-24 : Première récupération du code & adaptation à mes besoins personnels pour alimenter les champs dont j'ai besoin.
+  * 2017-10-26 : Passage en socket des appels, levée d'exception en cas de réponse vide & traduction en Français du `README.md`.
