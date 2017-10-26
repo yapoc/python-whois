@@ -27,6 +27,9 @@ from ._3_adjust import Domain
 CACHE_FILE = None
 SLOW_DOWN = 0
 
+class WhoisException (Exception):
+  pass
+
 
 def query(domain, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
   """
@@ -52,6 +55,7 @@ def query(domain, force=0, cache_file=None, slow_down=0, ignore_returncode=0):
     if (not pd or not pd['domain_name'][0]) and len(d) > 2: d = d[1:]
     else: break
 
-  return Domain(pd) if pd['domain_name'][0] else None
-
+  if pd['domain_name'][0]:
+    return Domain (pd)
+  raise WhoisException ("La requête whois n'a rien renvoyé pour le domaine {}".format ('.'.join (d)))
 
