@@ -31,6 +31,22 @@ Module `python` permettant de récupérer & parser les informations WHOIS des do
     * `.fr`
     * `.re`
     * `.yt`
+    * `io`
+    * `pw`
+    * `br`
+    * `ae`
+    * `rs`
+    * `bg`
+    * `ch` (pas l'air de très bien fonctionner)
+    * `dk`
+    * `fi`
+    * `hr` (pas l'air de très bien fonctionner)
+    * `hu` (pas l'air de très bien fonctionner)
+    * ``
+    * ``
+    * ``
+    * ``
+    * ``
  * Fait une vraie requête WHOIS plutôt que de scrapper une interface web.
  * Conversion des dates dans des objets de type `datetime`.
  * Possibilité théorique de cacher les informations; voir si nécessaire à notre besoin.
