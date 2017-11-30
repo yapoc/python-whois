@@ -48,6 +48,7 @@ def query(domain, force=0, cache_file=None, slow_down=0):
   if len(d) == 1: return None
 
   if domain.endswith('.co.jp'): tld = 'co_jp'
+  if domain.endswith('.com.br'): tld = 'com_br'
   else: tld = d[-1]
 
   if tld not in TLD_RE.keys(): raise TldException('Unknown TLD: %s\n(all known TLD: %s)' % (tld, list(TLD_RE.keys())))
