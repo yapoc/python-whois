@@ -8,8 +8,15 @@ PYTHON_VERSION = sys.version_info[0]
 
 
 class Domain:
+ 
+  def __str__ (self):
+    return """Name : {}, Registrar : {}, Creation_Date : {}, Expiration_Date : {}, Last_Updated : {}, Registrant : {}""".format (self.name, self.registrar, self.creation_date, self.expiration_date, self.last_updated, self.registrant)
 
   def __init__(self, data):
+    for k in data:
+      for i in range (0, len (data [k])):
+        data[k][i] = data[k][i].replace ('\\r', '')
+
     self.name        = data['domain_name'][0].strip().lower()
     self.registrar      = data['registrar'][0].strip()
     self.creation_date    = str_to_date(data['creation_date'][0])
