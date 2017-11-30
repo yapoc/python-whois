@@ -27,15 +27,15 @@ Module `python` permettant de récupérer & parser les informations WHOIS des do
     * `fi`
     * `fr`
     * `hk`
-    * `hr`
+    * `hr` (celui-ci me pose problème quand je le requête par `socket`)
     * `hu`
     * `ie`
-    * `immo`
+    * `immo` (pas réellement terminé; le serveur de whois est différent de celui qu'on peut "prédire")
     * `info`
     * `io`
     * `it`
     * `jp`
-    * `kz`
+    * `kz` (pas réellement terminé; le serveur de whois est différent de celui qu'on peut "prédire")
     * `li`
     * `lt`
     * `lu`
