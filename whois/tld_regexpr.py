@@ -213,7 +213,7 @@ io = {
     'creation_date': [ r'Creation Date:\s+(.+)\r', '' ],
     'updated_date': [ r'Updated Date:\s+([0-9\-:TZ]+)\r\n', '' ],
     'expiration_date': [ r'Registry Expiry Date:\s+(.+)\r', '' ],
-    'registrant': [ r'Registrant Name:\s+(.+)\r*', 'Champ Absent' ],
+    'registrant': [ r'Registrant Name:\s+(.+)\r*', 'Champ_absent_du_registre' ],
     'name_servers': [ r'Name Server:\s+(.+)\r+', '' ],
 }
 
@@ -221,7 +221,7 @@ pw = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
     'creation_date': [ r'Creation Date:\s+(.+)', '' ],
-    'updated_date': [ r'Updated Date:\s+(.*)$', '' ],
+    'updated_date': [ r'Updated Date:\s+(.+)', '' ],
     'expiration_date': [ r'Registry Expiry Date:\s+(.+)', '' ],
     'registrant': [ r'Registrant Name:\s+(.+)', '' ],
     'name_servers': [ r'Name Server:\s+(.+)', '' ],
@@ -240,9 +240,9 @@ com_br = {
 ae = {
     'registrar': [ r'Registrar Name:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
-    'creation_date': [ None, '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
+    'creation_date': [ None, '1970-01-01T00:00:01' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
     'registrant': [ r'Registrant Contact Name:\s+(.+)', '' ],
     'name_servers': [ r'Name Server:\s+(.+)', '' ],
 }
@@ -251,39 +251,39 @@ rs = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain name:\s+(.+)', '' ],
     'creation_date': [ r'Registration Date:\s+(.+)', '' ],
-    'updated_date': [ r'Modification Date:\s+(.*)$', '' ],
+    'updated_date': [ r'Modification Date:\s+(.+)', '' ],
     'expiration_date': [ r'Expiration Date:\s+(.+)', '' ],
     'registrant': [ r'Registrant:\s+(.+)', '' ],
-    'name_servers': [ r'DNS:\s+(.+)( - [0-9.]+)?', '' ],
+    'name_servers': [ r'DNS:\s+(.+) - [0-9.]+', '' ],
 }
 
 bg = {
-    'registrar': [ None, '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
     'domain_name': [ r'DOMAIN NAME:\s+(.+)', '' ],
-    'creation_date': [ None, '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ r'REGISTRANT:\s*\n(.+)$', '' ],
-    'name_servers': [ r'^(ns.+)', '' ],
+    'creation_date': [ None, '1970-01-01T00:00:01' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ r'REGISTRANT:\n(.+)', '' ],
+    'name_servers': [ None, 'Champ_impossible_à_identifier_précisément' ],
 }
 
 ch = {
-    'registrar': [ r'Registrar:\s*\n(.+)$', '' ],
-    'domain_name': [ r'Domain name:\s*\n(.+)$', '' ],
-    'creation_date': [ r'First registration date:\s*\n(.+)$', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ r'Holder of domain name:\s*\n(.+)$', '' ],
-    'name_servers': [ r'^(ns.+)( \[.*\])?', '' ],
+    'registrar': [ r'Registrar:\n(.+)', '' ],
+    'domain_name': [ r'Domain name:\n(.+)', '' ],
+    'creation_date': [ r'First registration date:\n(.+)', '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ r'Holder of domain name:\n(.+)', '' ],
+    'name_servers': [ r'(.+)\s+\[[0-9\.]+\]', '' ],
 }
 
 dk = {
-    'registrar': [ None, '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
     'domain_name': [ r'Domain:\s+(.+)', '' ],
     'creation_date': [ r'Registered:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
     'expiration_date': [ r'Expires:\s+(.+)', '' ],
-    'registrant': [ r'Registrant\s*\nHandle:\s+(.+)$', '' ],
+    'registrant': [ None, 'Champ_impossible_à_identifier_précisément' ],
     'name_servers': [ r'Hostname:\s+(.+)', '' ],
 }
 
@@ -298,31 +298,31 @@ fi = {
 }
 
 hr = {
-    'registrar': [ None, '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
     'domain_name': [ r'domain:\s+(.+)', '' ],
-    'creation_date': [ None, '' ],
-    'updated_date': [ None, '' ],
+    'creation_date': [ None, '1970-01-01T00:00:01' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
     'expiration_date': [ r'expires:\s+(.+)', '' ],
     'registrant': [ r'descr:\s+(.+)', '' ],
-    'name_servers': [ None, '' ],
+    'name_servers': [ None, 'Champ_absent_du_registre' ],
 }
 
 hu = {
-    'registrar': [ None, '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
     'domain_name': [ r'domain:\s+(.+)', '' ],
     'creation_date': [ r'record created:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ None, '' ],
-    'name_servers': [ None, '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
+    'name_servers': [ None, 'Champ_absent_du_registre' ],
 }
 
 lu = {
     'registrar': [ r'registrar-name:\s+(.+)', '' ],
     'domain_name': [ r'domainname:\s+(.+)', '' ],
     'creation_date': [ r'registered:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
     'registrant': [ r'org-name:\s+(.+)', '' ],
     'name_servers': [ r'nserver:\s+(.+)', '' ],
 }
@@ -331,8 +331,8 @@ no = {
     'registrar': [ r'Registrar Handle\.+:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name\.+:\s+(.+)', '' ],
     'creation_date': [ r'Created:\s+(.+)', '' ],
-    'updated_date': [ r'Last updated:\s+(.*)$', '' ],
-    'expiration_date': [ None, '' ],
+    'updated_date': [ r'Last updated:\s+(.+)', '' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
     'registrant': [ r'Legal-c Handle\.+:\s+(.+)', '' ],
     'name_servers': [ r'Name Server Handle\.+:\s+(.+)', '' ],
 }
@@ -341,8 +341,8 @@ si = {
     'registrar': [ r'registrar:\s+(.+)', '' ],
     'domain_name': [ r'domain:\s+(.+)', '' ],
     'creation_date': [ r'created:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ r'expires:\s+(.+)', '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ r'expire:\s+(.+)', '' ],
     'registrant': [ r'registrant:\s+(.+)', '' ],
     'name_servers': [ r'nameserver:\s+(.+)', '' ],
 }
@@ -361,19 +361,19 @@ ro = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
     'creation_date': [ r'Registered On:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ None, '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
     'name_servers': [ r'Nameserver:\s+(.+)', '' ],
 }
 
 ee = {
-    'registrar': [ r'Registrar\s*\nname:\s+(.+)', '' ],
+    'registrar': [ r'Registrar:\nname:\s+(.+)', '' ],
     'domain_name': [ r'Domain:\s*\nname:\s+(.+)', '' ],
-    'creation_date': [ r'registered:\s+(.+)', '' ],
-    'updated_date': [ r'changed:\s+(.*)$', '' ],
+    'creation_date': [ r'registered:\s+(.+)\s+\+.*', '' ],
+    'updated_date': [ r'changed:\s+(.*)\s+\+.*', '' ],
     'expiration_date': [ r'expire:\s+(.+)', '' ],
-    'registrant': [ r'Registrant\s*\nname:\s+(.+)', '' ],
+    'registrant': [ r'Registrant:\nname:\s+(.+)', '' ],
     'name_servers': [ r'nserver:\s+(.+)', '' ],
 }
 
@@ -381,109 +381,109 @@ lt = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain:\s+(.+)', '' ],
     'creation_date': [ r'Registered:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
     'expiration_date': [ r'Expires:\s+(.+)', '' ],
-    'registrant': [ None, '' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
     'name_servers': [ r'Nameserver:\s+(.+)', '' ],
 }
 
 nl = {
     'registrar': [ r'Registrar:\s*\n\s+(.+)', '' ],
     'domain_name': [ r'Domain name:\s+(.+)', '' ],
-    'creation_date': [ None, '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ None, '' ],
-    'name_servers': [ r'^\s+(ns.+)', '' ],
+    'creation_date': [ None, '1970-01-01T00:00:01' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
+    'name_servers': [ None, 'Champ_impossible_à_identifier_précisément' ],
 }
 
 li = {
-    'registrar': [ r'Registrar:\s*\n(.+)$', '' ],
-    'domain_name': [ r'Domain name:\s*\n(.+)$', '' ],
-    'creation_date': [ r'First registration date:\s*\n(.+)$', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ r'Holder of domain name:\s*\n(.+)$', '' ],
-    'name_servers': [ None, '' ],
+    'registrar': [ r'Registrar:\n(.+)', '' ],
+    'domain_name': [ r'Domain name:\n(.+)', '' ],
+    'creation_date': [ r'First registration date:\n(.+)', '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ r'Holder of domain name:\n(.+)', '' ],
+    'name_servers': [ None, 'Champ_impossible_à_identifier_précisément' ],
 }
 
 es = {
-    'registrar': [ None, '' ],
-    'domain_name': [ None, '' ],
-    'creation_date': [ None, '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ None, '' ],
-    'name_servers': [ None, '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
+    'domain_name': [ None, 'Champ_absent_du_registre' ],
+    'creation_date': [ None, '1970-01-01T00:00:01' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ None, '1970-01-01T00:00:01' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
+    'name_servers': [ None, 'Champ_absent_du_registre' ],
 }
 
 hk = {
     'registrar': [ r'Registrar Name:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
-    'creation_date': [ None, '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ None, '' ],
-    'registrant': [ None, '' ],
-    'name_servers': [ None, '' ],
+    'creation_date': [ r'Domain Name Commencement Date:\s+(.+)', '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ r'Expiry Date:\s+(.+)', '' ],
+    'registrant': [ r'Registrant Contact Information:\n\nCompany English Name .+:\s+(.+)', '' ],
+    'name_servers': [ None, 'Champ_impossible_à_identifier_précisément' ],
 }
 
 se = {
     'registrar': [ r'registrar:\s+(.+)', '' ],
     'domain_name': [ r'domain:\s+(.+)', '' ],
     'creation_date': [ r'created:\s+(.+)', '' ],
-    'updated_date': [ r'modified:\s+(.*)$', '' ],
+    'updated_date': [ r'modified:\s+(.+)', '' ],
     'expiration_date': [ r'expires:\s+(.+)', '' ],
-    'registrant': [ None, '' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
     'name_servers': [ r'nserver:\s+(.+)', '' ],
 }
 
 sg = {
-    'registrar': [ r'^Registrar:\s+(.+)', '' ],
-    'domain_name': [ r'^\s+Domain Name:\s+(.+)', '' ],
-    'creation_date': [ r'^\s+Creation Date:\s+(.+)', '' ],
-    'updated_date': [ r'^\s+Modified Date:\s+(.*)$', '' ],
-    'expiration_date': [ r'^\s+Expiration Date:\s+(.+)', '' ],
-    'registrant': [ r'^\s+Registrant:\s*\n\s*Name:\s+(.+)', '' ],
-    'name_servers': [ None, '' ],
+    'registrar': [ r'Registrar:\s+(.+)', '' ],
+    'domain_name': [ r'Domain Name:\s+(.+)', '' ],
+    'creation_date': [ r'Creation Date:\s+(.+)', '' ],
+    'updated_date': [ r'Modified Date:\s+(.+)', '' ],
+    'expiration_date': [ r'Expiration Date:\s+(.+)', '' ],
+    'registrant': [ r'\n\s+Name:\s+(.+)', '' ],
+    'name_servers': [ None, 'Champ_impossible_à_identifier_précisément' ],
 }
 
 mobi = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
     'creation_date': [ r'Creation Date:\s+(.+)', '' ],
-    'updated_date': [ r'Updated Date:\s+(.*)$', '' ],
+    'updated_date': [ r'Updated Date:\s+(.+)', '' ],
     'expiration_date': [ r'Registry Expiry Date:\s+(.+)', '' ],
     'registrant': [ r'Registrant Name:\s+(.+)', '' ],
     'name_servers': [ r'Name Server:\s+(.+)', '' ],
 }
 
 pt = {
-    'registrar': [ None, '' ],
-    'domain_name': [ r'.*Domain Name:\s+(.+)', '' ],
-    'creation_date': [ r'.*Creation Date\(.+\):\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
-    'expiration_date': [ r'.*Expiration Date\(.+\):\s+(.+)', '' ],
-    'registrant': [ r'.*Registrant\s*\n\s+(.+)', '' ],
-    'name_servers': [ r'^\s*Nameserver:\s+.+NS\s+(.+)\.', '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
+    'domain_name': [ r'.+Domain Name:\s+(.+)', '' ],
+    'creation_date': [ r'.+Creation Date \(dd/mm/yyyy\):\s+(.+)', '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
+    'expiration_date': [ r'.+Expiration Date \(dd/mm/yyyy\):\s+(.+)', '' ],
+    'registrant': [ r'.+Registrant\n\s+(.+)', 'TODO' ],
+    'name_servers': [ r'.+Nameserver:\s+.+NS\s+(.+)\.', '' ],
 }
 
 tech = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
     'creation_date': [ r'Creation Date:\s+(.+)', '' ],
-    'updated_date': [ r'Updated Date:\s+(.*)$', '' ],
+    'updated_date': [ r'Updated Date:\s+(.+)', '' ],
     'expiration_date': [ r'Registry Expiry Date:\s+(.+)', '' ],
     'registrant': [ r'Registrant Name:\s+(.+)', '' ],
     'name_servers': [ r'Name Server:\s+(.+)', '' ],
 }
 
 ie = {
-    'registrar': [ None, '' ],
+    'registrar': [ None, 'Champ_absent_du_registre' ],
     'domain_name': [ r'domain:\s+(.+)', '' ],
     'creation_date': [ r'registration:\s+(.+)', '' ],
-    'updated_date': [ None, '' ],
+    'updated_date': [ None, '1970-01-01T00:00:01' ],
     'expiration_date': [ r'renewal:\s+(.+)', '' ],
-    'registrant': [ None, '' ],
+    'registrant': [ None, 'Champ_absent_du_registre' ],
     'name_servers': [ r'nserver:\s+(.+)', '' ],
 }
 
@@ -491,7 +491,7 @@ paris = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
     'creation_date': [ r'Creation Date:\s+(.+)', '' ],
-    'updated_date': [ r'Updated Date:\s+(.*)$', '' ],
+    'updated_date': [ r'Updated Date:\s+(.+)', '' ],
     'expiration_date': [ r'Registry Expiry Date:\s+(.+)', '' ],
     'registrant': [ r'Registrant Name:\s+(.+)', '' ],
     'name_servers': [ r'Name Server:\s+(.+)', '' ],
@@ -501,7 +501,7 @@ pro = {
     'registrar': [ r'Registrar:\s+(.+)', '' ],
     'domain_name': [ r'Domain Name:\s+(.+)', '' ],
     'creation_date': [ r'Creation Date:\s+(.+)', '' ],
-    'updated_date': [ r'Updated Date:\s+(.*)$', '' ],
+    'updated_date': [ r'Updated Date:\s+(.+)', '' ],
     'expiration_date': [ r'Registry Expiry Date:\s+(.+)', '' ],
     'registrant': [ r'Registrant Name:\s+(.+)', '' ],
     'name_servers': [ r'Name Server:\s+(.+)', '' ],
