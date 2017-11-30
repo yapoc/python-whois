@@ -97,3 +97,6 @@ google.com
   * 2017-10-24 : Première récupération du code & adaptation à mes besoins personnels pour alimenter les champs dont j'ai besoin.
   * 2017-10-26 : Passage en socket des appels, levée d'exception en cas de réponse vide & traduction en Français du `README.md`.
   * 2017-11-29 : On lève une exception différenciable en cas de TLD inconnu.
+  * 2017-11-30 : 
+    * Ajout de pas mal de TLD.
+    * Ajout d'un nouveau format de descripteur de whois permettant d'avoir un message "par défaut" si le champ est absent du registre.
