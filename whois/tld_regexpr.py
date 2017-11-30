@@ -211,7 +211,7 @@ io = {
     'registrar': r'Registrar:\s+(.+)',
     'domain_name': r'Domain Name:\s+(.+)',
     'creation_date': r'Creation Date:\s+(.+)',
-    'updated_date': r'Updated Date:(.*)$',
+    'updated_date': r'Updated Date:\s+(.*)$',
     'expiration_date': r'Registry Expiry Date:\s+(.+)',
     'registrant': r'Registrant Name:\s+(.+)',
     'name_servers': r'Name Server:\s+(.+)'
@@ -221,7 +221,7 @@ pw = {
     'registrar': r'Registrar:\s+(.+)',
     'domain_name': r'Domain Name:\s+(.+)',
     'creation_date': r'Creation Date:\s+(.+)',
-    'updated_date': r'Updated Date:(.*)$',
+    'updated_date': r'Updated Date:\s+(.*)$',
     'expiration_date': r'Registry Expiry Date:\s+(.+)',
     'registrant': r'Registrant Name:\s+(.+)',
     'name_servers': r'Name Server:\s+(.+)'
@@ -231,7 +231,7 @@ br = {
     'registrar': r'owner:\s+(.+)',
     'domain_name': r'domain:\s+(.+)',
     'creation_date': r'created:\s+(.+)\s+#.*',
-    'updated_date': r'changed:(.*)$',
+    'updated_date': r'changed:\s+(.*)$',
     'expiration_date': r'expires:\s+(.+)',
     'registrant': r'owner:\s+(.+)',
     'name_servers': r'nserver:\s+(.+)'
@@ -251,7 +251,7 @@ rs = {
     'registrar': r'Registrar:\s+(.+)',
     'domain_name': r'Domain name:\s+(.+)',
     'creation_date': r'Registration Date:\s+(.+)',
-    'updated_date': r'Modification Date:(.*)$',
+    'updated_date': r'Modification Date:\s+(.*)$',
     'expiration_date': r'Expiration Date:\s+(.+)',
     'registrant': r'Registrant:\s+(.+)',
     'name_servers': r'DNS:\s+(.+)( - [0-9.]+)?'
@@ -291,7 +291,7 @@ fi = {
     'registrar': r'registrar\.+:\s+(.+)',
     'domain_name': r'domain\.+:\s+(.+)',
     'creation_date': r'created\.+:\s+(.+)',
-    'updated_date': r'modified\.+:(.*)$',
+    'updated_date': r'modified\.+:\s+(.*)$',
     'expiration_date': r'expires\.+:\s+(.+)',
     'registrant': r'name\.+:\s+(.+)',
     'name_servers': r'nserver\.+:\s+(.+)'
@@ -331,7 +331,7 @@ no = {
     'registrar': r'Registrar Handle\.+:\s+(.+)',
     'domain_name': r'Domain Name\.+:\s+(.+)',
     'creation_date': r'Created:\s+(.+)',
-    'updated_date': r'Last updated:(.*)$',
+    'updated_date': r'Last updated:\s+(.*)$',
     'expiration_date': None,
     'registrant': r'Legal-c Handle\.+:\s+(.+)',
     'name_servers': r'Name Server Handle\.+:\s+(.+)'
@@ -351,7 +351,7 @@ sk = {
     'registrar': r'Registrar:\s+(.+)',
     'domain_name': r'Domain:\s+(.+)',
     'creation_date': r'Created:\s+(.+)',
-    'updated_date': r'Updated:(.*)$',
+    'updated_date': r'Updated:\s+(.*)$',
     'expiration_date': r'Valid Until:\s+(.+)',
     'registrant': r'Registrant:\s+(.+)',
     'name_servers': r'Nameserver:\s+(.+)'
@@ -371,7 +371,7 @@ ee = {
     'registrar': r'Registrar\s*\nname:\s+(.+)',
     'domain_name': r'Domain:\s*\nname:\s+(.+)',
     'creation_date': r'registered:\s+(.+)',
-    'updated_date': r'changed:(.*)$',
+    'updated_date': r'changed:\s+(.*)$',
     'expiration_date': r'expire:\s+(.+)',
     'registrant': r'Registrant\s*\nname:\s+(.+)',
     'name_servers': r'nserver:\s+(.+)'
@@ -427,12 +427,102 @@ hk = {
     'name_servers': None,
 }
 
-dummy = {
-    'registrar': r':\s+(.+)',
-    'domain_name': r':\s+(.+)',
-    'creation_date': r':\s+(.+)',
-    'updated_date': r':(.*)$',
-    'expiration_date': r':\s+(.+)',
-    'registrant': r':\s+(.+)',
-    'name_servers': r':\s+(.+)'
+se = {
+    'registrar': r'registrar:\s+(.+)',
+    'domain_name': r'domain:\s+(.+)',
+    'creation_date': r'created:\s+(.+)',
+    'updated_date': r'modified:\s+(.*)$',
+    'expiration_date': r'expires:\s+(.+)',
+    'registrant': None,
+    'name_servers': r'nserver:\s+(.+)'
+}
+
+sg = {
+    'registrar': r'^Registrar:\s+(.+)',
+    'domain_name': r'^\s+Domain Name:\s+(.+)',
+    'creation_date': r'^\s+Creation Date:\s+(.+)',
+    'updated_date': r'^\s+Modified Date:\s+(.*)$',
+    'expiration_date': r'^\s+Expiration Date:\s+(.+)',
+    'registrant': r'^\s+Registrant:\s*\n\s*Name:\s+(.+)',
+    'name_servers': None
+}
+
+mobi = {
+    'registrar': r'Registrar:\s+(.+)',
+    'domain_name': r'Domain Name:\s+(.+)',
+    'creation_date': r'Creation Date:\s+(.+)',
+    'updated_date': r'Updated Date:\s+(.*)$',
+    'expiration_date': r'Registry Expiry Date:\s+(.+)',
+    'registrant': r'Registrant Name:\s+(.+)',
+    'name_servers': r'Name Server:\s+(.+)'
+}
+
+pt = {
+    'registrar': None,
+    'domain_name': r'.*Domain Name:\s+(.+)',
+    'creation_date': r'.*Creation Date\(.+\):\s+(.+)',
+    'updated_date': None,
+    'expiration_date': r'.*Expiration Date\(.+\):\s+(.+)',
+    'registrant': r'.*Registrant\s*\n\s+(.+)',
+    'name_servers': r'^\s*Nameserver:\s+.+NS\s+(.+)\.'
+}
+
+tech = {
+    'registrar': r'Registrar:\s+(.+)',
+    'domain_name': r'Domain Name:\s+(.+)',
+    'creation_date': r'Creation Date:\s+(.+)',
+    'updated_date': r'Updated Date:\s+(.*)$',
+    'expiration_date': r'Registry Expiry Date:\s+(.+)',
+    'registrant': r'Registrant Name:\s+(.+)',
+    'name_servers': r'Name Server:\s+(.+)'
+}
+
+ie = {
+    'registrar': None,
+    'domain_name': r'domain:\s+(.+)',
+    'creation_date': r'registration:\s+(.+)',
+    'updated_date': None,
+    'expiration_date': r'renewal:\s+(.+)',
+    'registrant': None,
+    'name_servers': r'nserver:\s+(.+)'
+}
+
+paris = {
+    'registrar': r'Registrar:\s+(.+)',
+    'domain_name': r'Domain Name:\s+(.+)',
+    'creation_date': r'Creation Date:\s+(.+)',
+    'updated_date': r'Updated Date:\s+(.*)$',
+    'expiration_date': r'Registry Expiry Date:\s+(.+)',
+    'registrant': r'Registrant Name:\s+(.+)',
+    'name_servers': r'Name Server:\s+(.+)'
+}
+
+pro = {
+    'registrar': r'Registrar:\s+(.+)',
+    'domain_name': r'Domain Name:\s+(.+)',
+    'creation_date': r'Creation Date:\s+(.+)',
+    'updated_date': r'Updated Date:\s+(.*)$',
+    'expiration_date': r'Registry Expiry Date:\s+(.+)',
+    'registrant': r'Registrant Name:\s+(.+)',
+    'name_servers': r'Name Server:\s+(.+)'
+}
+
+kz = {
+    'registrar': r'Current Registrar:\s+(.+)',
+    'domain_name': r'Domain Name:\s+(.+)',
+    'creation_date': r'Domain created:\s+(.+)\s+.*$',
+    'updated_date': r'Last modified:\s+(.*)\s+.*$',
+    'expiration_date': None,
+    'registrant': r'Name\.+:\s+(.+)',
+    'name_servers': r'^.+server\.+:\s+(.+)'
+}
+
+immo = {
+    'registrar': r'Registrar:\s+(.+)',
+    'domain_name': r'Domain Name:\s+(.+)',
+    'creation_date': r'Creation Date:\s+(.+)',
+    'updated_date': r'Updated Date:\s+(.*)$',
+    'expiration_date': r'Registry Expiry Date:\s+(.+)',
+    'registrant': r'Regitrant Name:\s+(.+)',
+    'name_servers': r'Name Server:\s+(.+)'
 }
