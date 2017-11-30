@@ -61,4 +61,4 @@ def _do_whois_query(dl):
     if t == b'': break
 
   s.close()
-  return b''.join(response).decode()
+  return b''.join(response).decode(errors = 'replace')
