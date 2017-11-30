@@ -4,52 +4,70 @@ Module `python` permettant de récupérer & parser les informations WHOIS des do
 
 # Fonctionnalités
 
-  * Module `python` simulant la commande `whois`.
-  * Interface d'accès simple et homogène des informations de WHOIS pour un domaine donné.
-  * Récupère les informations pour un grand nombre de TLDs : 
-    * `.com`
-    * `.net`
-    * `.org`
-    * `.uk`
-    * `.pl`
-    * `.ru`
-    * `.lv`
-    * `.jp`
-    * `.de`
-    * `.at`
-    * `.eu`
-    * `.biz`
-    * `.info`
-    * `.name`
-    * `.us`
-    * `.co`
-    * `.me`
-    * `.be`
-    * `.nz`
-    * `.cz`
-    * `.it`
-    * `.fr`
-    * `.re`
-    * `.yt`
-    * `io`
-    * `pw`
-    * `br`
+* Module `python` simulant la commande `whois`.
+* Interface d'accès simple et homogène des informations de WHOIS pour un domaine donné.
+* Récupère les informations pour un grand nombre de TLDs : 
+
     * `ae`
-    * `rs`
+    * `at`
+    * `be`
     * `bg`
-    * `ch` (pas l'air de très bien fonctionner)
+    * `biz`
+    * `br`
+    * `ch`
+    * `co`
+    * `co_jp`
+    * `com`
+    * `cz`
+    * `de`
     * `dk`
+    * `ee`
+    * `es`
+    * `eu`
     * `fi`
-    * `hr` (pas l'air de très bien fonctionner)
-    * `hu` (pas l'air de très bien fonctionner)
-    * ``
-    * ``
-    * ``
-    * ``
-    * ``
- * Fait une vraie requête WHOIS plutôt que de scrapper une interface web.
- * Conversion des dates dans des objets de type `datetime`.
- * Possibilité théorique de cacher les informations; voir si nécessaire à notre besoin.
+    * `fr`
+    * `hk`
+    * `hr`
+    * `hu`
+    * `ie`
+    * `immo`
+    * `info`
+    * `io`
+    * `it`
+    * `jp`
+    * `kz`
+    * `li`
+    * `lt`
+    * `lu`
+    * `lv`
+    * `me`
+    * `mobi`
+    * `name`
+    * `net`
+    * `nl`
+    * `no`
+    * `nz`
+    * `org`
+    * `paris`
+    * `pl`
+    * `pro`
+    * `pt`
+    * `pw`
+    * `re`
+    * `ro`
+    * `rs`
+    * `ru`
+    * `se`
+    * `sg`
+    * `si`
+    * `sk`
+    * `tech`
+    * `uk`
+    * `us`
+    * `yt`
+* Fait une vraie requête WHOIS plutôt que de scrapper une interface web.
+* Conversion des dates dans des objets de type `datetime`.
+* Possibilité théorique de cacher les informations; voir si nécessaire à notre besoin.
 
 # Exemples d'utilisation
 
