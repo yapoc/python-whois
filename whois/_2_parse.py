@@ -17,14 +17,14 @@ def get_tld_re(tld):
     tmp = v
 
   if 'extend' in tmp: del tmp['extend']
-  TLD_RE[tld] = dict((k, re.compile(v, re.IGNORECASE) if isinstance(v, str) else v) for k, v in tmp.items())
+  TLD_RE[tld] = dict((k, [ re.compile(v[0], re.IGNORECASE) if isinstance(v[0], str) else v[0], v[1] ]) for k, v in tmp.items())
   return TLD_RE[tld]
 
 
 [get_tld_re(tld) for tld in dir(tld_regexpr) if tld[0] != '_']
 
 
-#from pprint import pprint
+from pprint import pprint
 
 
 def do_parse(whois_str, tld):
@@ -41,11 +41,9 @@ def do_parse(whois_str, tld):
     whois_str = whois_str[whois_str.find('Domain Name:'):]
 
   for k, v in TLD_RE.get(tld, TLD_RE['com']).items():
-    if v is None:
-      r[k] = ['']
-
+    if v[0] is None:
+      r[k] = [ v[1] ]
     else:
-      r[k] = v.findall(whois_str) or ['']
+      r[k] = v[0].findall(whois_str) or [ v[1] ]
 
-  #pprint(r)
   return r
