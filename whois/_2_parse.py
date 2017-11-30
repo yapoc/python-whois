@@ -47,3 +47,4 @@ def do_parse(whois_str, tld):
       r[k] = v[0].findall(whois_str) or [ v[1] ]
 
   return r
+  """ touch file """
